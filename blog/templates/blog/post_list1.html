@@ -1,0 +1,15 @@
+{% load staticfiles %}
+<head>
+  <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+<div>
+    <h1><a href="/">Blog Yapımı</a></h1>
+</div>
+
+{% for post in posts %}
+    <div>
+        <img src="{{ post.avatar.url }}" style="width:304px;height:228px;">
+        <h1><a href="">{{ post.baslik }}</a></h1>
+        <p>{{ post.yazi|linebreaksbr }}</p>
+    </div>
+{% endfor %}
